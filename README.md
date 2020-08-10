@@ -1,4 +1,5 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
+[![Build Status](https://travis-ci.org/KelynPNjeri/Basic-Linter.svg?branch=ft-lint-json)](https://travis-ci.org/KelynPNjeri/Basic-Linter)
 
 # Linter
 
