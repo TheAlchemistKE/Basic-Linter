@@ -31,14 +31,14 @@ describe Linter do
       end
     end
   end
-  describe '#check_yml' do
-    it 'should check yml' do
-      expect(subject.check_yml).to eql('Checking YML...')
-    end
-  end
-  describe '#check_csv' do
-    it 'should check csv' do
-      expect(subject.check_csv).to eql('Checking CSV...')
-    end
-  end
+  # describe '#check_yml' do
+  #   it 'should check yml' do
+  #     expect(subject.check_yml).to eql('Checking YML...')
+  #   end
+  # end
+  # describe '#check_csv' do
+  #   it 'should check csv' do
+  #     expect(subject.check_csv).to eql('Checking CSV...')
+  #   end
+  # end
 end
