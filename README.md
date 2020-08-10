@@ -1,21 +1,19 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Linter
 
-> One paragraph statement about the project.
+> This repo contains the code to my own version of a code linter. It checks through various file types checking for syntactical errors.
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
+WIP
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
+- Ruby
 
 ## Live Demo
-
+- Work In Progress.
 [Live Demo Link](https://livedemo.com)
 
 
