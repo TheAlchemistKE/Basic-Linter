@@ -17,8 +17,12 @@ describe Linter do
     end
   end
   describe '#check_json' do
-    it 'should check json' do
-      expect(subject.check_json).to eql('Checking JSON...')
+    describe 'with valid JSON object' do
+      it 'should return valid JSON message.' do
+      end
+    end
+    describe 'with invalid JSON object' do
+      it 'should return valid'
     end
   end
   describe '#check_yml' do
