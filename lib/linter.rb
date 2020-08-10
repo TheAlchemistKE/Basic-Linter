@@ -7,7 +7,7 @@ include W3CValidators
 class Linter
   def initialize(text)
     @text = text
-    @css_validator = CSSValidator.new
+    @validator = CSSValidator.new
   end
 
   def check_html
@@ -31,7 +31,12 @@ class Linter
   end
 
   def check_css
-    'Checking YML...'
+    results = @validator.validate_text('body { margin: 0px; }')
+    if results.errors
+      'Invalid CSS'
+    else
+      'Valid CSS'
+    end
   end
 
   def check_csv

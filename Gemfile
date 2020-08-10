@@ -5,3 +5,4 @@ gem 'rspec'
 
 gem 'be_valid_asset'
 gem 'w3c_validators'
+gem 'coveralls', require: false
