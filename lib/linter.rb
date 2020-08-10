@@ -1,6 +1,18 @@
+require 'nokogiri'
 class Linter
+  def initialize(text)
+    @text = text
+  end
+
   def check_html
-    'Checking HTML...'
+    doc = Nokogiri::HTML(@text) do |config|
+      config.strict
+    end
+    if doc.errors.any?
+      'Invalid HTML'
+    else
+      'Valid HTML'
+    end
   end
 
   def check_json

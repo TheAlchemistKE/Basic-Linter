@@ -3,8 +3,17 @@ require_relative '../lib/linter'
 
 describe Linter do
   describe '#check_html' do
-    it 'should check html' do
-      expect(subject.check_html).to eql('Checking HTML...')
+    describe 'with invalid HTML' do
+      it 'should return invalid HTML' do
+        linter = Linter.new('<h1>Kelyn</span')
+        expect(linter.check_html).to eql('Invalid HTML')
+      end
+    end
+    describe 'with valid HTML' do
+      it 'should return valid HTML' do
+        linter = Linter.new('<h1>Kelyn</h1>')
+        expect(linter.check_html).to eql('Valid HTML')
+      end
     end
   end
   describe '#check_json' do
