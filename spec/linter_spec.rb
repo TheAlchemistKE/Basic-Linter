@@ -9,17 +9,17 @@ describe Linter do
     end
     describe '#check_json' do
         it 'should check json' do
-            expect(Linter.check_json).to eql("Checking JSON...")
+            expect(subject.check_json).to eql("Checking JSON...")
         end
     end
     describe '#check_yml' do
         it 'should check yml' do
-            expect(Linter.check_yml).to eql("Checking YML...")
+            expect(subject.check_yml).to eql("Checking YML...")
         end
     end
     describe '#check_csv' do
         it 'should check csv' do
-            expect(Linter.check_csv).to eql("Checking CSV...")
+            expect(subject.check_csv).to eql("Checking CSV...")
         end
     end
 end
