@@ -1,4 +1,6 @@
 require 'nokogiri'
+require 'json'
+
 class Linter
   def initialize(text)
     @text = text
@@ -16,7 +18,12 @@ class Linter
   end
 
   def check_json
-    'Checking JSON...'
+    output = JSON.parse(@text)
+    if output.is_a?(Hash) || output.is_a?(Array)
+        return 'Valid JSON object'
+    else
+        return 'Invalid JSON object'
+    end
   end
 
   def check_yml
