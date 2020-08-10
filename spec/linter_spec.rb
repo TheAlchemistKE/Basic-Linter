@@ -11,7 +11,7 @@ describe Linter do
     end
     describe 'with valid HTML' do
       it 'should return valid HTML' do
-        linter = Linter.new('<h1>Kelyn</h1>')
+        linter = Linter.new('<h2>Kelyn</h2>')
         expect(linter.check_html).to eql('Valid HTML')
       end
     end

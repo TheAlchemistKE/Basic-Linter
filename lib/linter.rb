@@ -1,9 +1,13 @@
-require 'nokogiri'
 require 'json'
+require 'nokogiri'
+require 'w3c_validators'
+  
+include W3CValidators
 
 class Linter
   def initialize(text)
     @text = text
+    @css_validator = CSSValidator.new
   end
 
   def check_html
@@ -26,7 +30,7 @@ class Linter
     end
   end
 
-  def check_yml
+  def check_css
     'Checking YML...'
   end
 
