@@ -31,8 +31,8 @@ class Linter
   end
 
   def check_css
-    results = @validator.validate_text('body { margin: 0px; }')
-    if results.errors.length > 0
+    results = @validator.validate_text(@text)
+    if results.errors.length > 0 
       'Invalid CSS'
     else
       'Valid CSS'

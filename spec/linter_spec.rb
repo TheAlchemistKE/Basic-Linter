@@ -38,12 +38,12 @@ describe Linter do
         expect(linter.check_css).to eql('Valid CSS')
       end
     end
-    # describe 'with invalid CSS' do
-    #   it 'should return invalid CSS' do
-    #     linter = Linter.new('body { margin: 0px')
-    #     expect(linter.check_css).to eql('Invalid CSS')
-    #   end
-    # end
+    describe 'with invalid CSS' do
+      it 'should return invalid CSS' do
+        linter = Linter.new('body margin: 0px; ')
+        expect(linter.check_css).to eql('Invalid CSS')
+      end
+    end
   end
   # describe '#check_yml' do
   #   it 'should check yml' do
