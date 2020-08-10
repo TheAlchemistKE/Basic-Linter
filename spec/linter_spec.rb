@@ -2,24 +2,24 @@ require 'rspec'
 require_relative '../lib/linter'
 
 describe Linter do
-    describe '#check_html' do 
-        it 'should check html' do
-            expect(subject.check_html).to eql("Checking HTML...")
-        end
+  describe '#check_html' do
+    it 'should check html' do
+      expect(subject.check_html).to eql('Checking HTML...')
     end
-    describe '#check_json' do
-        it 'should check json' do
-            expect(subject.check_json).to eql("Checking JSON...")
-        end
+  end
+  describe '#check_json' do
+    it 'should check json' do
+      expect(subject.check_json).to eql('Checking JSON...')
     end
-    describe '#check_yml' do
-        it 'should check yml' do
-            expect(subject.check_yml).to eql("Checking YML...")
-        end
+  end
+  describe '#check_yml' do
+    it 'should check yml' do
+      expect(subject.check_yml).to eql('Checking YML...')
     end
-    describe '#check_csv' do
-        it 'should check csv' do
-            expect(subject.check_csv).to eql("Checking CSV...")
-        end
+  end
+  describe '#check_csv' do
+    it 'should check csv' do
+      expect(subject.check_csv).to eql('Checking CSV...')
     end
+  end
 end

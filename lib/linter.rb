@@ -1,14 +1,17 @@
 class Linter
-    def check_html
-        return "Checking HTML..."
-    end
-    def check_json
-        return "Checking JSON..."
-    end
-    def check_yml
-        return "Checking YML..."
-    end
-    def check_csv
-        return "Checking CSV..."
-    end
+  def check_html
+    'Checking HTML...'
+  end
+
+  def check_json
+    'Checking JSON...'
+  end
+
+  def check_yml
+    'Checking YML...'
+  end
+
+  def check_csv
+    'Checking CSV...'
+  end
 end
