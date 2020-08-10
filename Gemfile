@@ -1,6 +1,6 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "nokogiri"
-gem "httparty"
-gem "byebug"
-gem "rspec"
+gem 'byebug'
+gem 'httparty'
+gem 'nokogiri'
+gem 'rspec'
