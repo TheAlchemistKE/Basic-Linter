@@ -52,25 +52,18 @@ To lint your code snippet:
 3. Enter the necessary details as asked.
 
 ### Run tests
-To run the 
-
-### Deployment
-
+To run the tests:
+- From the project `root directory` run `rspec`
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Kelyn Paul Njeri**
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- Github: [@KelynPNjeri](https://github.com/KelynPNjeri)
+- Twitter: [@KelynNjeri](https://twitter.com/kelyn-njeri)
+- Linkedin: [Kelyn Paul](https://linkedin.com/kelyn-paul)
 
-👤 **Author2**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
 
 ## 🤝 Contributing
 
