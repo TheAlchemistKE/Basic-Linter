@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/KelynPNjeri/Basic-Linter.svg?branch=ft-lint-css)](https://travis-ci.org/KelynPNjeri/Basic-Linter)
 [![Coverage Status](https://coveralls.io/repos/github/KelynPNjeri/Basic-Linter/badge.svg?branch=ft-lint-css)](https://coveralls.io/github/KelynPNjeri/Basic-Linter?branch=ft-lint-css)
 
-# Linter
+# Basic Linter
 
 > This repo contains the code to my own version of a code linter. It checks through various file types checking for syntactical errors.
 

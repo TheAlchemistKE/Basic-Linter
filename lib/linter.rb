@@ -1,4 +1,4 @@
-# Style/SymbolProc
+require 'colorize'
 require 'json'
 require 'nokogiri'
 require 'w3c_validators'
@@ -11,9 +11,7 @@ class Linter
   end
 
   def check_html
-    doc = Nokogiri::HTML(@text) do |config|
-      config.strict
-    end
+    doc = Nokogiri::HTML(@text, &:strict)
     if doc.errors.any?
       'Invalid HTML'
     else
