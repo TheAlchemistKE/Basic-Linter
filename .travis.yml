@@ -5,6 +5,7 @@ before_install:
   - nvm install --lts
   - gem install rspec
   - gem install coveralls
+  - gem install colorize
   - gem install w3c_validators
 before_script:
   - bundle install --no-deployment --jobs=3 --retry=3
