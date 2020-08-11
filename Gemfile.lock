@@ -1,9 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    be_valid_asset (1.3.1)
-      rspec
-    byebug (11.1.3)
     colorize (0.8.1)
     coveralls (0.7.2)
       multi_json (~> 1.3)
@@ -66,8 +63,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  be_valid_asset
-  byebug
   colorize
   coveralls
   nokogiri
@@ -78,4 +73,4 @@ DEPENDENCIES
   w3c_validators
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
