@@ -13,7 +13,7 @@ jobs:
           ruby-version: 2.6.x
       - name: Setup RSpec
         run: |
-          [ -f Gemfile ] && bundle --deployment
+          [ -f Gemfile ] && bundle --no-deployment
           gem install --no-document rspec:'~>3.0'
           gem install bunder:2.1.2
       - name: RSpec Report
