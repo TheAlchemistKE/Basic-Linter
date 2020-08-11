@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-gem 'be_valid_asset'
-gem 'byebug'
 gem 'colorize'
 gem 'coveralls', require: false
 gem 'nokogiri'

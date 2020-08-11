@@ -16,5 +16,9 @@ jobs:
           gem install --no-document rspec:'~>3.0'
           gem install coveralls
           gem install colorize
+          gem install nokogiri
+          gem install tty-font
+          gem install tty-prompt
+          gem install w3c_validators
       - name: RSpec Report
         run: rspec --force-color --format documentation
