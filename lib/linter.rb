@@ -1,10 +1,10 @@
+# Style/SymbolProc
 require 'json'
 require 'nokogiri'
 require 'w3c_validators'
-  
-include W3CValidators
 
 class Linter
+  include W3CValidators
   def initialize(text)
     @text = text
     @validator = CSSValidator.new
@@ -24,22 +24,18 @@ class Linter
   def check_json
     output = JSON.parse(@text)
     if output.is_a?(Hash) || output.is_a?(Array)
-        return 'Valid JSON object'
+      'Valid JSON object'
     else
-        return 'Invalid JSON object'
+      'Invalid JSON object'
     end
   end
 
   def check_css
     results = @validator.validate_text(@text)
-    if results.errors.length > 0 
+    if !results.errors.empty?
       'Invalid CSS'
     else
       'Valid CSS'
     end
-  end
-
-  def check_csv
-    'Checking CSV...'
   end
 end

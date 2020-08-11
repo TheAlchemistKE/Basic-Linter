@@ -20,14 +20,13 @@ describe Linter do
     describe 'with valid JSON object' do
       it 'should return valid JSON object.' do
         lint = Linter.new(%({"a": "b", "c": 1, "d": true}))
-        expect(lint.check_json).to eql("Valid JSON object")
+        expect(lint.check_json).to eql('Valid JSON object')
       end
     end
     describe 'with invalid JSON object' do
       it 'should return invalid JSON object' do
-        lint = Linter.new("123")
-        expect(lint.check_json).to eql("Invalid JSON object")
-      
+        lint = Linter.new('123')
+        expect(lint.check_json).to eql('Invalid JSON object')
       end
     end
   end
