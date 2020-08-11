@@ -6,6 +6,8 @@
 # Basic Linter
 
 > This repo contains the code to my own version of a code linter. It checks through various file types checking for syntactical errors.
+![screenshot](./screenshot/linter.png)
+
 
 The main objective of this project was to build a simple linter that could parse through code and give you an output. My linter accepts a code snippet and parses through it to ensure that all is working alright. If it is, it returns a `positive message` if not it raises a `negative message`. For now, it only takes in the following code snippet types:
 - [x] JSON
