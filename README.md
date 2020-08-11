@@ -1,6 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 [![Build Status](https://travis-ci.org/KelynPNjeri/Basic-Linter.svg?branch=ft-lint-css)](https://travis-ci.org/KelynPNjeri/Basic-Linter)
 [![Coverage Status](https://coveralls.io/repos/github/KelynPNjeri/Basic-Linter/badge.svg?branch=ft-lint-css)](https://coveralls.io/github/KelynPNjeri/Basic-Linter?branch=ft-lint-css)
+[![Maintainability](https://api.codeclimate.com/v1/badges/83c90efb5f834d2cbe6d/maintainability)](https://codeclimate.com/github/KelynPNjeri/Basic-Linter/maintainability)
 
 # Basic Linter
 
