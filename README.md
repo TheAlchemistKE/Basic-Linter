@@ -17,8 +17,7 @@ I went for the more minimalistic approach to building the project and used gems 
 
 The following are upcoming features to the project:
 1. Lint HTML through a URI.
-2. Allow file input so that you can check entire file.
-3. Give more precise errors like on what line it occurred
+2. Give more precise errors like on what line it occurred
 
 ## Built With
 
@@ -48,7 +47,7 @@ So far, this project only works for 3 types of code snippet:
 
 To lint your code snippet:
 1. Run `main.rb` using `ruby bin/main.rb`.
-2. A series of prompts will follow after seeing a welcome message.
+2. A series of prompts will follow after seeing a welcome message i.e the path to the file you'd like to lint.
 3. Enter the necessary details as asked.
 
 ### Run tests

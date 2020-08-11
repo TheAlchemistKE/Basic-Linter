@@ -12,8 +12,14 @@ puts font.write('Linter').colorize(:green)
 puts 'Welcome to your Basic Terminal Linter.'
 puts 'You can check the following:'
 
-text = prompt.ask('Paste the snippet to check:')
-linter = Linter.new(text)
+path = prompt.ask('Paste the path to file to be linted:')
+data = nil
+if File.exist?(path)
+  data = File.read(path)
+else
+  puts "Path doesn't exist."
+end
+linter = Linter.new(data)
 
 types = %w[HTML CSS JSON]
 
