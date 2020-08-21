@@ -2,7 +2,6 @@
 require_relative '../lib/reader'
 require_relative '../lib/linter'
 
-
 file = ARGV.shift
 
 # Check for file existence.

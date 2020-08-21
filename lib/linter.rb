@@ -1,17 +1,13 @@
-
 require_relative './inspector'
 
 class Linter
-  attr_accessor :err
-
   include Inspector
 
   def initialize(data)
     @data = data
-    @err = lint_file
   end
 
-  def lint_file; 
+  def lint_file
     err = []
     err << properly_spaced?
     err << newline?
@@ -25,7 +21,7 @@ class Linter
       err << check_space_after((idx + 1), content, ':')
       err << check_space_after((idx + 1), content, ',')
     end
-    err = err.reject(&:empty?).join("")
+    err = err.reject(&:empty?).join('')
     err
   end
 
@@ -37,7 +33,7 @@ class Linter
       err << check_for_newline((idx + 1), content, ';')
     end
     # byebug
-    err = err.reject(&:nil?).join("")
+    err = err.reject(&:nil?).join('')
     err
   end
 end
