@@ -1,4 +1,4 @@
-body {
+body { 
     max-width: 100%;
     margin: 0;
     padding: 0;
@@ -6,10 +6,10 @@ body {
     color: #000;
 }
   
-.ticket-group {
+.ticket-group { 
     display: none;
 }
 
-.menu {
-display: none;
+.menu{
+    display: none;
 }

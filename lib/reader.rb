@@ -1,18 +1,19 @@
-require_relative './helper'
+require 'strscan'
 class FileReader
-    include HelperMethods
+  attr_reader :file_content
 
-    attr_reader :file_content
-    def initialize(file)
-        @file_path = file
-        @file_content = read_file(@file_path)
-    end
+  def initialize(file)
+    @file_path = file
+    @file_content = read_file(@file_path)
+  end
 
-    def read_file(file)
-        data = Hash.new
-        if(File.exist?(file))
-            File.readlines(file).each_with_index{|el, idx| data.merge!({(idx + 1 )=> el }) }
-        end
-        data
+  def read_file(file)
+    line_data = ''
+    scanned_data = ''
+    if File.exist?(file)
+      line_data = File.readlines(file)
+      scanned_data = line_data.map { |el| el = StringScanner.new(el) }
     end
+    scanned_data
+  end
 end
