@@ -8,7 +8,7 @@ module Inspector
       s = StringScanner.new(s.reverse)
       s.skip(Regexp.new(sym))
       s.scan(/\s+/)
-      err = "Error: Line #{line} is improperly spaced.\nLine #{line}: Add space before '#{sym}'" if s.matched != ' '
+      err = "Error: Line #{line} is improperly spaced.\nLine #{line}: Add space before '#{sym}'\n" if s.matched != ' '
       s = data.scan_until(Regexp.new(sym))
     end
     err
@@ -20,7 +20,7 @@ module Inspector
     data.scan_until(Regexp.new(sym))
     while data.matched?
       data.scan(/\s+/)
-      err = "Error: Line #{line} is improperly spaced.\nLine #{line}: Add space after '#{sym}'" if data.matched != ' '
+      err = "Error: Line #{line} is improperly spaced.\nLine #{line}: Add space after '#{sym}'\n" if data.matched != ' '
       data.scan_until(Regexp.new(sym))
     end
     err
@@ -30,7 +30,7 @@ module Inspector
     data.reset
     data.scan_until(Regexp.new(sym))
     while data.matched?
-      err = "Error: Line #{line} lacks newline after '#{sym}'\nLine #{line}: Add newline after '#{sym}'" if data.eos?
+      err = "Error: Line #{line} lacks newline after '#{sym}'\nLine #{line}: Add newline after '#{sym}'\n" if data.eos?
       data.scan_until(Regexp.new(sym))
     end
     err
