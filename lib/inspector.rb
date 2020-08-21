@@ -30,7 +30,7 @@ module Inspector
     data.reset
     data.scan_until(Regexp.new(sym))
     while data.matched?
-      err = "Error: Line #{line} lacks newline after '#{sym}'\nLine #{line}: Add space newline '#{sym}'" if data.eos?
+      err = "Error: Line #{line} lacks newline after '#{sym}'\nLine #{line}: Add newline after '#{sym}'" if data.eos?
       data.scan_until(Regexp.new(sym))
     end
     err
