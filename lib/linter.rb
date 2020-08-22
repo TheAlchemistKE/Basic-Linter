@@ -1,5 +1,4 @@
 require_relative './inspector'
-require 'byebug'
 
 class Linter
   include Inspector

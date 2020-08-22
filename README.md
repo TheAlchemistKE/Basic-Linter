@@ -1,21 +1,16 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-[![Build Status](https://travis-ci.org/KelynPNjeri/Basic-Linter.svg?branch=ft-lint-css)](https://travis-ci.org/KelynPNjeri/Basic-Linter)
-[![Coverage Status](https://coveralls.io/repos/github/KelynPNjeri/Basic-Linter/badge.svg?branch=ft-lint-css)](https://coveralls.io/github/KelynPNjeri/Basic-Linter?branch=ft-lint-css)
+[![Build Status](https://travis-ci.org/KelynPNjeri/Basic-Linter.svg?branch=ft-check-levels)](https://travis-ci.org/KelynPNjeri/Basic-Linter)
 [![Maintainability](https://api.codeclimate.com/v1/badges/83c90efb5f834d2cbe6d/maintainability)](https://codeclimate.com/github/KelynPNjeri/Basic-Linter/maintainability)
+[![Run on Repl.it](https://repl.it/badge/github/KelynPNjeri/Basic-Linter)](https://repl.it/github/KelynPNjeri/Basic-Linter)
+# Basic CSS Linter
 
-# Basic Linter
+> This repo contains the code to my own version of a code linter. This linter lints CSS files.
 
-> This repo contains the code to my own version of a code linter. It checks through various file types checking for syntactical errors.
-![screenshot](./screenshot/linter.png)
+The main objective of this project was to build a simple linter that could parse through code and give you an an output of the error and where it occurred. This basic CSS Linter accepts the pathe to a `CSS` file and it opens the file and reads its contents line by line searching the entire file passes on three criterions:
+1. That it contains spaces before certain symbols such as: '{' and '('.
+2. That it contains spaces after symbols such as: ')', ':' and ','.
+3. That a newline exists after the following symbols: '{', '}' and ';'.
 
-
-The main objective of this project was to build a simple linter that could parse through code and give you an output. My linter accepts a code snippet and parses through it to ensure that all is working alright. If it is, it returns a `positive message` if not it raises a `negative message`. For now, it only takes in the following code snippet types:
-- [x] JSON
-- [x] HTML
-- [x] CSS
-I went for the more minimalistic approach to building the project and used gems that perform the various parsing operations. In my case, I used:
-- W3CValidator 
-- json
 
 The following are upcoming features to the project:
 1. Lint HTML through a URI.
@@ -26,7 +21,7 @@ The following are upcoming features to the project:
 - Ruby
 
 ## Live Demo
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://repl.it/@KelynPaul/Basic-Linter)
 
 
 ## Getting Started
@@ -40,24 +35,32 @@ To get a local copy up and running follow these simple example steps.
 To have the project up and running on your machine, follow the following:
 - [ ] Clone the repo using `git clone https://github.com/KelynPNjeri/Basic-Linter.git`
 - [ ] Open the cloned project.
+Here is a small walk through:
+
+![Linting A File](./screenshot/lintingfile.gif)
+
 
 ### Usage
-So far, this project only works for 3 types of code snippet:
-1. HTML.
-2. CSS.
-3. JSON.
+So far, this project searches the entire file and ensures it passes three criterions:
+1. That it contains spaces before certain symbols such as: '{' and '('.
+2. That it contains spaces after symbols such as: ')', ':' and ','.
+3. That a newline exists after the following symbols: '{', '}' and ';'.
 
 To lint your code snippet:
-1. Run `main.rb` using `ruby bin/main.rb`.
-2. A series of prompts will follow after seeing a welcome message i.e the path to the file you'd like to lint.
-3. Enter the necessary details as asked.
+1. Run `main.rb` using `ruby bin/main.rb [path_to_file]`.
+2. In a few seconds, you will get a series of errors if your file has errors or you will get no response meaning there's nothing wrong with your file.
+
 
 ### Run tests
 To run the tests:
 - From the project `root directory` run `rspec`
+Here is a walkthrough on how to do it:
+
+![Running Tests](./screenshot/running_tests.gif)
 
 
-## Authors
+
+## Author
 
 👤 **Kelyn Paul Njeri**
 
