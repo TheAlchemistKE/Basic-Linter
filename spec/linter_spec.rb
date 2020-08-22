@@ -1,46 +1,31 @@
 require 'rspec'
+require_relative '../lib/reader'
 require_relative '../lib/linter'
 
 describe Linter do
-  describe '#check_html' do
-    describe 'with invalid HTML' do
-      it 'should return invalid HTML' do
-        linter = Linter.new('<h1>Kelyn</span')
-        expect(linter.check_html).to eql('Invalid HTML')
+  describe '#lint_file' do
+    context 'with no space after symbols' do
+      it 'should return space related linter errors' do
+        path = 'spec/tests/no_space_after.css'
+        reader = FileReader.new(path)
+        linter = Linter.new(reader.file_content)
+        expect(linter.lint_file).to(eql(["Error: Line 2 is improperly spaced.\nLine 2: Add space after ':'\n"]))
       end
     end
-    describe 'with valid HTML' do
-      it 'should return valid HTML' do
-        linter = Linter.new('<h2>Kelyn</h2>')
-        expect(linter.check_html).to eql('Valid HTML')
+    context 'with no space before symbols' do
+      it 'should return an error stating missing space before the symbol and how to solve it' do
+        path = 'spec/tests/no_space_before.css'
+        reader = FileReader.new(path)
+        linter = Linter.new(reader.file_content)
+        expect(linter.lint_file).to(eql(["Error: Line 1 is improperly spaced.\nLine 1: Add space before '{'\n"]))
       end
     end
-  end
-  describe '#check_json' do
-    describe 'with valid JSON object' do
-      it 'should return valid JSON object.' do
-        lint = Linter.new(%({"a": "b", "c": 1, "d": true}))
-        expect(lint.check_json).to eql('Valid JSON object')
-      end
-    end
-    describe 'with invalid JSON object' do
-      it 'should return invalid JSON object' do
-        lint = Linter.new('123')
-        expect(lint.check_json).to eql('Invalid JSON object')
-      end
-    end
-  end
-  describe '#check_css' do
-    describe 'with valid CSS' do
-      it 'should return valid CSS' do
-        linter = Linter.new('body { margin: 0px; }')
-        expect(linter.check_css).to eql('Valid CSS')
-      end
-    end
-    describe 'with invalid CSS' do
-      it 'should return invalid CSS' do
-        linter = Linter.new('body margin: 0px; ')
-        expect(linter.check_css).to eql('Invalid CSS')
+    context 'with no newline after symbols' do
+      it 'should throw an error and a suggestion on how to fix the error.' do
+        path = 'spec/tests/no_newline.css'
+        reader = FileReader.new(path)
+        linter = Linter.new(reader.file_content)
+        expect(linter.lint_file).to(eql(["Error: Line 15 lacks newline after '}'\nLine 15: Add newline after '}'\n"]))
       end
     end
   end

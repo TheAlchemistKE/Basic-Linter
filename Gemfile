@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
+gem 'byebug'
 gem 'colorize'
 gem 'coveralls', require: false
-gem 'nokogiri'
 gem 'rspec'
 gem 'simplecov', require: false
+gem 'strscan'
 gem 'tty-font'
 gem 'tty-prompt'
-gem 'w3c_validators'

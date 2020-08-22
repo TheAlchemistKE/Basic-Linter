@@ -1,39 +1,41 @@
-require 'colorize'
-require 'json'
-require 'nokogiri'
-require 'w3c_validators'
+require_relative './inspector'
 
 class Linter
-  include W3CValidators
-  def initialize(text)
-    @text = text
-    @validator = CSSValidator.new
+  include Inspector
+
+  def initialize(data)
+    @data = data
   end
 
-  def check_html
-    doc = Nokogiri::HTML(@text, &:strict)
-    if doc.errors.any?
-      'Invalid HTML'
-    else
-      'Valid HTML'
-    end
+  def lint_file
+    err = []
+    err << properly_spaced?
+    err << newline?
+    err.reject(&:empty?)
   end
 
-  def check_json
-    output = JSON.parse(@text)
-    if output.is_a?(Hash) || output.is_a?(Array)
-      'Valid JSON object'
-    else
-      'Invalid JSON object'
+  def properly_spaced?
+    err = []
+    @data.each_with_index do |content, idx|
+      err << check_space_before((idx + 1), content, '{')
+      err << check_space_before((idx + 1), content, '\(')
+      err << check_space_after((idx + 1), content, '\)')
+      err << check_space_after((idx + 1), content, ':')
+      err << check_space_after((idx + 1), content, ',')
     end
+    err = err.reject(&:empty?).join('')
+    err
   end
 
-  def check_css
-    results = @validator.validate_text(@text)
-    if !results.errors.empty?
-      'Invalid CSS'
-    else
-      'Valid CSS'
+  def newline?
+    err = []
+    @data.each_with_index do |content, idx|
+      err << check_for_newline((idx + 1), content, '{')
+      err << check_for_newline((idx + 1), content, '}')
+      err << check_for_newline((idx + 1), content, ';')
     end
+    # byebug
+    err = err.reject(&:nil?).join('')
+    err
   end
 end
